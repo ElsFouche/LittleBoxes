@@ -6,6 +6,7 @@ public class TriggerPrerequisites : MonoBehaviour
 {
     public int numTriggers;
     public TriggerUnityEvent eventTriggerScript;
+    public AudioSource triggerAudioSource;
 
     private int numTriggersActivated = 0;
 
@@ -23,6 +24,7 @@ public class TriggerPrerequisites : MonoBehaviour
         if (numTriggersActivated >= numTriggers)
         {
             EnableUnityEventTriggerer();
+            if (triggerAudioSource) triggerAudioSource.Play();
         }
     }
     
